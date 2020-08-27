@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Button, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
 import Colors from '../../constants/Colors';
 
-const CategoryItem = props => {
+const ProductItem = props => {
     let TouchableComponent = TouchableOpacity;
 
     if(Platform.OS === 'android' && Platform.Version >= 21) {
@@ -10,18 +10,20 @@ const CategoryItem = props => {
     }
 
     return (
-        <View style={styles.category}>
+        <View style={styles.product}>
             <View style={styles.touchable}>
-                <TouchableComponent onPress={props.onViewProducts} useForeground>
+                <TouchableComponent onPress={props.onViewDetail} useForeground>
                     <View>
                         <View style={styles.imgContainer}>
                             <Image style={styles.image} source={{ uri: props.image }} />
                         </View>
                         <View style={styles.detail}>
                             <Text style={styles.title}>{props.title}</Text>
+                            <Text style={styles.price}>${props.price.toFixed(2)}</Text>
                         </View>
                         <View style={styles.actions}>
-                            <Button color={Colors.primary} title="View Details" onPress={props.onViewProducts} />
+                            <Button color={Colors.primary} title="View Details" onPress={props.onViewDetail} />
+                            <Button color={Colors.primary} title="To Cart" onPress={props.onAddToCart} />
                         </View>
                     </View>
                 </TouchableComponent>
@@ -31,7 +33,7 @@ const CategoryItem = props => {
 }
 
 const styles = StyleSheet.create({
-    category: {
+    product: {
         shadowColor: 'black',
         shadowOpacity: 0.26,
         shadowOffset: {width: 0, height: 2},
@@ -50,16 +52,21 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginVertical: 4
     },
+    price: {
+        fontSize: 14,
+        color: '#888'
+    },
     actions: {
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
         height: '25%',
+        paddingHorizontal: 20
     },
     detail: {
         alignItems: 'center',
-        height: '16%',
-        padding: 7
+        height: '15%',
+        padding: 10
     },
     imgContainer: {
         width: '100%',
@@ -74,4 +81,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CategoryItem
+export default ProductItem

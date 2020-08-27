@@ -14,7 +14,16 @@ const ProductCategoriesOverview = props => {
             renderItem={itemData => <CategoryItem 
                 image={itemData.item.imageUrl}
                 title={itemData.item.title}
-                onViewProducts={() => {}}
+                onViewProducts={() => {
+                    props.navigation.navigate({
+                        routeName: 'ProductOverview',
+                        params: {
+                            categoryId: itemData.item.id,
+                            productTitle: itemData.item.title,
+                            productPrice: itemData.item.price
+                        }
+                    })
+                }}
             />}
         />
     )
