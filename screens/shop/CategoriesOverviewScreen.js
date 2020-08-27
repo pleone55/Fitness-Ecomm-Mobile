@@ -4,7 +4,7 @@ import { FlatList } from 'react-native';
 
 import CategoryItem from '../../components/shop/CategoryItem';
 
-const ProductCategoriesOverview = props => {
+const CategoriesOverviewScreen = props => {
     const categories = useSelector(state => state.products.availableCategories);
 
     return (
@@ -29,8 +29,8 @@ const ProductCategoriesOverview = props => {
     )
 };
 
-ProductCategoriesOverview.navigationOptions = {
+CategoriesOverviewScreen.navigationOptions = {
     headerTitle: 'All Categories'
 }
 
-export default ProductCategoriesOverview;
+export default CategoriesOverviewScreen;

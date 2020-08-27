@@ -21,7 +21,7 @@ const CategoryItem = props => {
                             <Text style={styles.title}>{props.title}</Text>
                         </View>
                         <View style={styles.actions}>
-                            <Button color={Colors.primary} title="View Details" onPress={props.onViewProducts} />
+                            <Button color={Colors.primary} title="View Products" onPress={props.onViewProducts} />
                         </View>
                     </View>
                 </TouchableComponent>
