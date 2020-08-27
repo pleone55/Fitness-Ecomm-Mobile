@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { FlatList } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import CategoryItem from '../../components/shop/CategoryItem';
+import CustomHeaderButton from '../../components/UI/CustomHeaderButton';
 
 const CategoriesOverviewScreen = props => {
     const categories = useSelector(state => state.products.availableCategories);
@@ -29,8 +31,19 @@ const CategoriesOverviewScreen = props => {
     )
 };
 
-CategoriesOverviewScreen.navigationOptions = {
-    headerTitle: 'All Categories'
+CategoriesOverviewScreen.navigationOptions = navigationData => {
+    return {
+        headerTitle: 'All Categories',
+        headerRight: () => <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+            <Item 
+                title='Cart' 
+                iconName={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'} 
+                onPress={() => {
+                    navigationData.navigation.navigate('CartScreen')
+                }}
+            />
+        </HeaderButtons>
+    }
 }
 
 export default CategoriesOverviewScreen;
