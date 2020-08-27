@@ -196,7 +196,7 @@ export const PRODUCTS = [
         'p19',
         ['c5'],
         'u1',
-        'Blackstone Labs Abnormal',
+        'BL Abnormal',
         'https://www.mybodygoods.com/wp-content/uploads/2019/12/abNORmal-nandrolone-precursor-19-nor-DHEA-blackstone-labs_1024x.png',
         'Gain mass',
         49.99
@@ -205,7 +205,7 @@ export const PRODUCTS = [
         'p20',
         ['c5'],
         'u1',
-        'Blackstone Labs Chosen1',
+        'BL Chosen1',
         'https://www.mybodygoods.com/wp-content/uploads/2019/12/chosen1-1-dhea-supplement-1-andro-1-testosterone-precursor-blackstone-labs_1024x.png',
         'Build Lean Muscle',
         49.99
@@ -223,7 +223,7 @@ export const PRODUCTS = [
         'p22',
         ['c2', 'c5'],
         'u1',
-        'Redcon1 Total War',
+        'Total War',
         'https://www.mybodygoods.com/wp-content/uploads/2019/12/Total-War-rainbow-candy-Render_2048x@2x.png',
         'Intense Energy',
         34.99
