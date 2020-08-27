@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { FlatList } from 'react-native';
+import { FlatList, Platform } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import CategoryItem from '../../components/shop/CategoryItem';
@@ -40,6 +40,15 @@ CategoriesOverviewScreen.navigationOptions = navigationData => {
                 iconName={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'} 
                 onPress={() => {
                     navigationData.navigation.navigate('CartScreen')
+                }}
+            />
+        </HeaderButtons>,
+        headerLeft: () => <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+            <Item 
+                title="Menu" 
+                iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
+                onPress={() => {
+                    navigationData.navigation.toggleDrawer();
                 }}
             />
         </HeaderButtons>
